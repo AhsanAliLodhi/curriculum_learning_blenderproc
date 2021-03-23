@@ -1,0 +1,216 @@
+# Args: <cam_file> <obj_file> <output_dir>
+{
+  "version": 3,
+  "setup": {
+    "blender_install_path": "/home_local/<env:USER>/blender/",
+    "custom_blender_path": "/home/andrew/blender-2.91",
+    "pip": [
+      "h5py"
+    ]
+  },
+  "modules": [
+    {
+      "module": "main.Initializer",
+      "config": {
+        "global": {
+          "output_dir": "examples/debugging/output",
+          "max_bounces": 200,
+          "diffuse_bounces": 200,
+          "glossy_bounces": 200,
+          "transmission_bounces": 200,
+          "transparency_bounces": 200
+        }
+      },
+    },
+    {
+      "module": "camera.CameraSampler",
+      "config": {
+        "cam_poses": [
+          {
+             
+           "location": [10, 0, 0 ],
+            "rotation": {
+              "format": "look_at",
+              "value": [0, 0, 0]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "module": "loader.ObjectLoader",
+      "config": {
+        "paths": [
+          "~/models/ycb/002_master_chef_can/google_16k/textured.obj",
+          "~/models/ycb/003_cracker_box/google_16k/textured.obj",
+          "~/models/ycb/004_sugar_box/google_16k/textured.obj",
+          "~/models/ycb/005_tomato_soup_can/google_16k/textured.obj",
+          "~/models/ycb/006_mustard_bottle/google_16k/textured.obj",
+          "~/models/ycb/007_tuna_fish_can/google_16k/textured.obj",
+          "~/models/ycb/008_pudding_box/google_16k/textured.obj",
+          "~/models/ycb/009_gelatin_box/google_16k/textured.obj",
+          "~/models/ycb/010_potted_meat_can/google_16k/textured.obj",
+          "~/models/ycb/011_banana/google_16k/textured.obj",
+          ],
+        "add_properties": {
+           "cp_foreground_object": True
+        }
+      }
+    },
+    {
+      "module": "loader.ObjectLoader",
+      "config": {
+        "paths": [
+          "~/models/ycb/012_strawberry/google_16k/textured.obj",
+          "~/models/ycb/013_apple/google_16k/textured.obj",
+
+          "~/models/ycb/015_peach/google_16k/textured.obj",
+          "~/models/ycb/016_pear/google_16k/textured.obj",
+          "~/models/ycb/017_orange/google_16k/textured.obj",
+
+          "~/models/ycb/029_plate/google_16k/textured.obj",
+
+          "~/models/ycb/035_power_drill/google_16k/textured.obj",
+          "~/models/ycb/036_wood_block/google_16k/textured.obj",
+          "~/models/ycb/037_scissors/google_16k/textured.obj",
+          "~/models/ycb/038_padlock/google_16k/textured.obj",
+          "~/models/ycb/040_large_marker/google_16k/textured.obj",
+          "~/models/ycb/042_adjustable_wrench/google_16k/textured.obj",
+          "~/models/ycb/043_phillips_screwdriver/google_16k/textured.obj",
+          "~/models/ycb/048_hammer/google_16k/textured.obj",
+
+          "~/models/ycb/051_large_clamp/google_16k/textured.obj",
+
+          "~/models/ycb/053_mini_soccer_ball/google_16k/textured.obj",
+          "~/models/ycb/054_softball/google_16k/textured.obj",
+          "~/models/ycb/055_baseball/google_16k/textured.obj",
+          "~/models/ycb/056_tennis_ball/google_16k/textured.obj",
+          "~/models/ycb/057_racquetball/google_16k/textured.obj",
+          "~/models/ycb/058_golf_ball/google_16k/textured.obj",
+
+          "~/models/ycb/061_foam_brick/google_16k/textured.obj",
+          "~/models/ycb/062_dice/google_16k/textured.obj",
+          "~/models/ycb/063-a_marbles/google_16k/textured.obj",
+          "~/models/ycb/065-a_cups/google_16k/textured.obj",
+
+          "~/models/ycb/070-a_colored_wood_blocks/google_16k/textured.obj",
+          "~/models/ycb/071_nine_hole_peg_test/google_16k/textured.obj",
+          "~/models/ycb/072-a_toy_airplane/google_16k/textured.obj",
+          "~/models/ycb/072-b_toy_airplane/google_16k/textured.obj",
+
+          "~/models/ycb/077_rubiks_cube/google_16k/textured.obj",
+        
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/champion_copper_plus_spark_plug.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/cheezit_big_original.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/crayola_64_ct.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/dr_browns_bottle_brush.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/elmers_washable_no_run_school_glue.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/expo_dry_erase_board_eraser.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/feline_greenies_dental_treats.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/first_years_take_and_toss_straw_cup.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/genuine_joe_plastic_stir_sticks.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/highland_6539_self_stick_notes.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/kong_air_dog_squeakair_tennis_ball.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/kong_duck_dog_toy.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/kong_sitting_frog_dog_toy.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/kyjen_squeakin_eggs_plush_puppies.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/laugh_out_loud_joke_book.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/mark_twain_huckleberry_finn.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/mead_index_cards.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/mommys_helper_outlet_plugs.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/munchkin_white_hot_duck_bath_toy.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/oreo_mega_stuf.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/paper_mate_12_count_mirado_black_warrior.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/rolodex_jumbo_pencil_cup.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/safety_works_safety_glasses.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/sharpie_accent_tank_style_highlighters.obj",
+          "~/models/rutgers_apc_models/apc_main/object_models/tarball/stanley_66_052.obj",
+          "~/models/ycb/014_lemon/google_16k/textured.obj",
+          "~/models/ycb/018_plum/google_16k/textured.obj",
+          "~/models/ycb/019_pitcher_base/google_16k/textured.obj",
+          "~/models/ycb/021_bleach_cleanser/google_16k/textured.obj",
+          "~/models/ycb/022_windex_bottle/google_16k/textured.obj",
+          "~/models/ycb/024_bowl/google_16k/textured.obj",
+          "~/models/ycb/025_mug/google_16k/textured.obj",
+          "~/models/ycb/026_sponge/google_16k/textured.obj",
+          "~/models/ycb/027_skillet/google_16k/textured.obj",
+          "~/models/ycb/028_skillet_lid/google_16k/textured.obj",
+          "~/models/ycb/030_fork/google_16k/textured.obj",
+          "~/models/ycb/031_spoon/google_16k/textured.obj",
+          "~/models/ycb/032_knife/google_16k/textured.obj",
+          "~/models/ycb/033_spatula/google_16k/textured.obj",
+
+          "~/models/ycb/044_flat_screwdriver/google_16k/textured.obj",
+          "~/models/ycb/059_chain/google_16k/textured.obj",
+          "~/models/ycb/073-a_lego_duplo/google_16k/textured.obj",
+          "~/models/ycb/073-b_lego_duplo/google_16k/textured.obj",
+          "~/models/ycb/073-c_lego_duplo/google_16k/textured.obj",
+          "~/models/ycb/073-d_lego_duplo/google_16k/textured.obj",
+        ],
+        "add_properties": {
+           "cp_background_object": True
+        }
+      }
+    },
+
+        {
+      "module": "lighting.LightLoader",
+      "config": {
+        "lights": [
+          {
+            "type": "POINT",
+            "location": [10, 0, 0],
+            "energy": 4000
+          }
+        ]
+      }
+    },
+    {
+      "module": "composite.CurriculumSampler",
+      "config": {
+        "scales":[0.6, 0.4, 0.2],
+        "last_frame_to_render": 15,
+        "images_for_bg":"/media/andrew/NV2_2/Downloads/bg_images",
+        "real_backgrounds":"/media/andrew/NV2_2/Downloads/bg_images",
+        "background_light_energy": 10,
+        "map_by": ["class", "instance", "name"],
+        "append_to_existing_output": True,
+        "fg_objs":{
+          "provider": "getter.Entity",
+          "conditions": {
+            "cp_foreground_object": True,
+            "type": "MESH"
+          }
+        },
+        "bg_objs":{
+          "provider": "getter.Entity",
+          "conditions": {
+            "cp_background_object": True,
+            "type": "MESH"
+          }
+        }
+      }
+    },
+
+    # {
+    #   "module": "renderer.RgbRenderer",
+    #   "config": {
+    #     "output_key": "colors",
+    #     "samples": 350
+    #   }
+    # },
+    # {
+    #   "module": "writer.Hdf5Writer",
+    #   "config": {
+    #     "postprocessing_modules": {
+    #       "distance": [
+    #         {
+    #           "module": "postprocessing.TrimRedundantChannels",
+    #           "config": {}
+    #         }
+    #       ]
+    #     }
+    #   }
+    # }
+  ]
+}

@@ -1,0 +1,7 @@
+idx,category_id,name,channel_class,channel_instance
+1,1,textured,0,1
+2,2,textured.001,0,1
+6,0,bg,0,1
+7,1,textured.004,0,1
+8,1,textured.005,0,1
+9,2,textured.006,0,1
